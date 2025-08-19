@@ -21,24 +21,20 @@ jobs:
           ---
           all:
             children:
-              ansible-master:
+              webservers:
                 hosts:
-                  master:
-                    ansible_host: 10.128.0.8
+                  web01:
+                    ansible_host: 10.166.0.2
                     ansible_user: erwin
                     
 
-              ansible-node1:
+              databases:
                 hosts:
-                  node1:
-                    ansible_host: 10.166.0.2
-                    ansible_user: erwin
-                  
-             ansible-node2:
-                hosts:
-                  node2:
+                  db01:
                     ansible_host: 10.128.0.22
-                    ansible_user: erwin      
+                    ansible_user: erwin
+                    db_version: 14
+                   
 
               
           EOF
